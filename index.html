@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0d16">
+  <meta name="description" content="Uma jornada de estudos para o ENEM: conteúdos, questões comentadas, redação, simulados e seu progresso em um só lugar.">
+  <meta property="og:title" content="Say — sua jornada ENEM">
+  <meta property="og:description" content="Seu espaço de estudos, do primeiro capítulo à aprovação.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script>try{let t=localStorage.getItem('aurora-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script src="./js/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div id="app" class="app-shell">
+    <div id="scrim" class="scrim" hidden></div>
+    <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+      <a class="brand" href="#/inicio" aria-label="Say — página inicial">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span class="brand-type">say<span class="brand-dot">.</span><small>SEU ESPAÇO ENEM</small></span>
+      </a>
+      <div class="nav-label">ESPAÇO DE ESTUDOS</div>
+      <nav class="side-nav" aria-label="Navegação principal">
+        <a href="#/inicio" data-nav="inicio" class="nav-link"><span data-icon="home"></span><span>Visão geral</span></a>
+        <a href="#/biblioteca" data-nav="biblioteca" class="nav-link"><span data-icon="book"></span><span>Biblioteca</span></a>
+        <a href="#/plano" data-nav="plano" class="nav-link"><span data-icon="calendar"></span><span>Meu plano</span></a>
+        <a href="#/questoes" data-nav="questoes" class="nav-link"><span data-icon="target"></span><span>Questões e simulados</span></a>
+        <a href="#/redacao" data-nav="redacao" class="nav-link"><span data-icon="pen"></span><span>Redação</span></a>
+        <a href="#/flashcards" data-nav="flashcards" class="nav-link"><span data-icon="layers"></span><span>Flashcards</span></a>
+        <a href="#/desempenho" data-nav="desempenho" class="nav-link"><span data-icon="chart"></span><span>Meu desempenho</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="focus-card"><span class="focus-orb" aria-hidden="true">✦</span><strong>Um passo por vez.</strong><p>Consistência é mais importante que perfeição.</p><a href="#/plano">Ver meu planejamento <span aria-hidden="true">↗</span></a></div>
+        <a href="#/configuracoes" data-nav="configuracoes" class="nav-link"><span data-icon="settings"></span><span>Configurações</span></a>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-start"><button class="icon-btn hamburger" id="menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false" type="button"><span data-icon="menu"></span></button><span class="topbar-eyebrow">PLATAFORMA DE ESTUDOS <span class="topbar-separator">/</span> <span id="topbar-title">Visão geral</span></span></div>
+        <div class="topbar-actions"><span class="sync-state" id="sync-state" role="status"><span class="sync-dot"></span><span id="sync-label">Modo local</span></span><button id="account-button" class="account-button" type="button"><span data-icon="user"></span><span id="account-label">Entrar</span></button></div>
+      </header>
+      <main id="main" class="page-content" tabindex="-1"><div class="loading-state" role="status">Preparando seu espaço de estudos…</div></main>
+      <footer class="site-footer"><span>Feito para quem acredita no próximo passo. <strong>Say</strong> © 2026.</span><span>Projeto independente, não afiliado ao Inep.</span></footer>
+    </div>
+    <nav class="mobile-nav" aria-label="Navegação rápida">
+      <a href="#/inicio" data-nav="inicio"><span data-icon="home"></span><span>Início</span></a>
+      <a href="#/biblioteca" data-nav="biblioteca"><span data-icon="book"></span><span>Estudar</span></a>
+      <a href="#/plano" data-nav="plano"><span data-icon="calendar"></span><span>Plano</span></a>
+      <a href="#/redacao" data-nav="redacao"><span data-icon="pen"></span><span>Redação</span></a>
+      <button type="button" id="mobile-more"><span data-icon="menu"></span><span>Mais</span></button>
+    </nav>
+  </div>
+  <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-heading">
+    <form method="dialog" class="dialog-close-row"><button class="icon-btn" aria-label="Fechar janela de autenticação" value="cancel"><span data-icon="close"></span></button></form>
+    <div class="auth-badge" aria-hidden="true">✳</div>
+    <h2 id="auth-heading">Bem-vinda de volta.</h2>
+    <p id="auth-intro">Entre para manter seus estudos sincronizados em todos os dispositivos.</p>
+    <form id="auth-form" class="auth-form">
+      <label for="auth-email">E-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required>
+      <label for="auth-password">Senha</label><input id="auth-password" name="password" type="password" minlength="6" autocomplete="current-password" placeholder="Sua senha" required>
+      <button class="button button-primary full-width" id="auth-submit" type="submit">Entrar na minha conta</button>
+    </form>
+    <div class="auth-footer"><button type="button" class="text-button" id="auth-switch">Criar conta gratuita</button><button type="button" class="text-button" id="auth-recovery">Esqueci minha senha</button></div>
+    <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <span id="global-announcer" class="sr-only" role="status" aria-live="polite"></span>
+</body>
+</html>
