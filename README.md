@@ -22,7 +22,7 @@ em uma rotina que faz sentido — no celular e no computador.
 <br>
 
 ![Capítulos](https://img.shields.io/badge/46-CAPÍTULOS-A6A0FF?style=flat-square&labelColor=151A2B)
-![Questões](https://img.shields.io/badge/166-QUESTÕES_COMENTADAS-91D9BF?style=flat-square&labelColor=151A2B)
+![Questões](https://img.shields.io/badge/460-QUESTÕES_COMENTADAS-91D9BF?style=flat-square&labelColor=151A2B)
 ![Flashcards](https://img.shields.io/badge/158-FLASHCARDS-E8C883?style=flat-square&labelColor=151A2B)
 ![Redação](https://img.shields.io/badge/60-TEMAS_DE_REDAÇÃO-E5A7BC?style=flat-square&labelColor=151A2B)
 
@@ -103,11 +103,11 @@ A interface combina fundo escuro, tons de lavanda, cartões organizados e navega
 
 | Área | Capítulos | Questões | Alguns dos assuntos |
 |:--|:--:|:--:|:--|
-| **Linguagens** | 9 | 24 | Interpretação, argumentação, variação linguística, literatura, arte, inglês e espanhol. |
-| **Ciências Humanas** | 11 | 30 | História do Brasil, industrialização, cidadania, cartografia, clima, filosofia e sociologia. |
-| **Ciências da Natureza** | 15 | 66 | Ecologia, genética, evolução, fisiologia, química, movimento, energia, eletricidade e ondas. |
-| **Matemática** | 11 | 46 | Porcentagem, funções, geometria, probabilidade, estatística e matemática financeira. |
-| **Total** | **46** | **166** | **Leitura, exemplos e prática em uma mesma biblioteca.** |
+| **Linguagens** | 9 | 90 | Interpretação, argumentação, variação linguística, literatura, arte, inglês e espanhol. |
+| **Ciências Humanas** | 11 | 110 | História do Brasil, industrialização, cidadania, cartografia, clima, filosofia e sociologia. |
+| **Ciências da Natureza** | 15 | 150 | Ecologia, genética, evolução, fisiologia, química, movimento, energia, eletricidade e ondas. |
+| **Matemática** | 11 | 110 | Porcentagem, funções, geometria, probabilidade, estatística e matemática financeira. |
+| **Total** | **46** | **460** | **Leitura, exemplos e prática em uma mesma biblioteca.** |
 
 Os **158 flashcards** incluem a retomada de perguntas dos capítulos. Os **60 temas de redação** percorrem educação, cultura, tecnologia, ambiente, direitos e outros eixos sociais.
 
